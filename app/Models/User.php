@@ -68,4 +68,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(AccountInformation::class);
     }
+
+    public function meme(){
+        return 'meme function ni';
+    }
 }

@@ -14,6 +14,9 @@ Route::get('/', function () {
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+Route::view('/meme', 'meme')
+    ->middleware(['auth', 'verified'])
+    ->name('meme');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
