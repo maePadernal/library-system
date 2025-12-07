@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string ('last_name');
             $table->string('student_type');
             $table->string('course_name')->nullable();
-            $table->string('year_level')->nullable();
+        $table->string('year_level')->nullable();
             $table->string('student_id')->nullable();
             $table->string('contact_number')->nullable();
             $table->string('address')->nullable();

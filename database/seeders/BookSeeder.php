@@ -1,10 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Book;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 
 class BookSeeder extends Seeder
 {
@@ -36,5 +36,8 @@ class BookSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ]);
+
+
+         Book::factory()->count(100)->create();
     }
 }

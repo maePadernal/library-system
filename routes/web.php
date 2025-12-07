@@ -1,11 +1,19 @@
 <?php
 
-use App\Livewire\Settings\Appearance;
-use App\Livewire\Settings\Password;
-use App\Livewire\Settings\Profile;
-use App\Livewire\Settings\TwoFactor;
-use Illuminate\Support\Facades\Route;
+
 use Laravel\Fortify\Features;
+use App\Livewire\Settings\Profile;
+use App\Livewire\Settings\Password;
+use App\Livewire\Admin\EditUserPage;
+use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Admin\UsersListPage;
+use App\Livewire\Settings\Appearance;
+use Illuminate\Support\Facades\Route;
+use App\Livewire\Admin\CreateUserPage;
+use App\Livewire\Admin\Book\BookListPage;
+
+use App\Livewire\Admin\Book\ViewBookPage;
+use App\Livewire\Admin\Book\CreateBookPage;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,4 +43,17 @@ Route::middleware(['auth'])->group(function () {
             ),
         )
         ->name('two-factor.show');
+
+    // USERS
+    Route::get('admin/users',   UsersListPage::class)->name('admin.users-page');
+Route::get('admin/create-user', CreateUserPage::class)->name('admin.create-user-page');
+    Route::get('admin/edit-user/{id}',   EditUserPage::class)->name('admin.edit-user');
+    Route::get('admin/view-user/{id}',   ViewBookPage::class)->name('')->name('admin.view-user');
+
+    //BOOKS
+    Route::get('admin/books',   BookListPage::class)->name('')->name('admin.books-list-page');
+    Route::get('admin/book-details/{id}',   ViewBookPage::class)->name('')->name('admin.view-book-page');
+    Route::get('admin/create-book',   CreateBookPage::class)->name('')->name('admin.create-book');
+
+
 });

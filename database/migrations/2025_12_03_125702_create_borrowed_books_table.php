@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('borrowed_books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+              $table->foreignId('book_id');
             $table->date('borrowed_from');
             $table->date('borrowed_until');
-            $table->date('returned-date');
+            $table->date('returned_date')->nullable();
             $table->foreignId('assist_by');
             $table->timestamps();
         });

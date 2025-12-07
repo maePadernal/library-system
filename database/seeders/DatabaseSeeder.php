@@ -9,8 +9,9 @@ use Database\Seeders\BookSeeder;
 use Database\Seeders\PostSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\BookCategorySeeder;
-use Illuminate\Support\Facades\Hash;
+use Database\Seeders\BorrowedBookSeeder;
 use Database\Seeders\AccountImfpormationSeeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +27,12 @@ class DatabaseSeeder extends Seeder
              AccountImfpormationSeeder::class,
              PostSeeder::class,
              BookSeeder::class,
-             BookCategorySeeder::class
+             BookCategorySeeder::class,
+             BorrowedBookSeeder::class,
+             BookDamagesSeeder::class,
+             ServiceRateSeeder::class,
+             CoursesSeeder::class,
+             SmsLogsSeeder::class,
             ]);
 
 

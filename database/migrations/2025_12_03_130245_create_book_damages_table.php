@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('book_damages', function (Blueprint $table) {
             $table->id();
-              $table->foreignId('book_id')->constrained()->cascadeOnDelete();
+              $table->foreignId('borrowed_book_id')->constrained()->cascadeOnDelete();
                 $table->string('title');
                 $table->string('reason');
                 $table->integer('fines');
